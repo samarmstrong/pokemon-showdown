@@ -1,0 +1,14 @@
+# M0 smoke: crude-encoder PPO vs RandomPlayer, tiny budget.
+# Confirms the whole pipeline works end-to-end; not expected to learn.
+run:
+  name: smoke_random
+  total_timesteps: 2048
+  seed: 0
+env:
+  battle_format: gen9championsvgc2026regma
+  team_format: vgc2026_regma
+  team_name: goodstuff_01
+train:
+  n_steps: 256
+  batch_size: 64
+  learning_rate: 3.0e-4
