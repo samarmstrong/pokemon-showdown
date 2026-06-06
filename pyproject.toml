@@ -36,6 +36,8 @@ dev = [
 [project.scripts]
 psrl-train = "psrl.cli.train:main"
 psrl-eval = "psrl.cli.eval:main"
+psrl-fetch-replays = "psrl.cli.fetch_replays:main"
+psrl-parse-replays = "psrl.cli.parse_replays:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/psrl"]

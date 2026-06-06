@@ -34,10 +34,44 @@ uv run psrl-train --config configs/exp/smoke_random.yaml
 uv run psrl-eval --a artifacts/runs/<ts>-smoke/ckpt_final.pt --b random --n 20
 ```
 
+## Replay dataset pipeline
+
+The replay pipeline has two stages:
+
+1. Fetch raw public replay JSON from Pokemon Showdown. Keep this raw data
+   lossless so parser/schema changes do not require another crawl.
+2. Parse raw logs into turn-level JSONL examples:
+   `public_log_prefix -> resolved_public_actions`.
+
+The labels are resolved public replay events, not guaranteed hidden submitted
+choices. That distinction matters for switches after fainting, redirection, and
+other mechanics.
+
+```bash
+# Small smoke crawl.
+uv run psrl-fetch-replays \
+  --format gen9championsvgc2026regma \
+  --out-dir data/replays/raw/gen9championsvgc2026regma \
+  --max-replays 25 \
+  --max-pages 20 \
+  --min-rating 1600
+
+uv run psrl-parse-replays \
+  --raw-dir data/replays/raw/gen9championsvgc2026regma \
+  --out data/replays/turns/gen9championsvgc2026regma.jsonl \
+  --min-rating 1600 \
+  --min-turns 2
+```
+
+For exploratory crawls, lower `--min-rating` or pass `--include-unrated`.
+Showdown replay search paginates by upload timestamp; use `--before <uploadtime>`
+to continue from an older point in time.
+
 ## Package layout
 
 - `src/psrl/env/` — sole `poke_env` import site
 - `src/psrl/encoders/`, `actions/` — versioned, format-aware interfaces
+- `src/psrl/replays/` — public replay crawling and turn-dataset parsing
 - `src/psrl/rewards/`, `opponents/`, `policies/` — pluggable components
 - `src/psrl/training/` — SB3 runner, self-play
 - `src/psrl/eval/` — arena, tournament, replay diff
