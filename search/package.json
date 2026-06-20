@@ -1,0 +1,7 @@
+{
+  "name": "psrl-search",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Brute-force game-tree solver for VGC matchups, driving the in-process Showdown sim."
+}
