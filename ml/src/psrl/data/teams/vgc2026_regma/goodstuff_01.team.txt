@@ -1,0 +1,65 @@
+Incineroar @ Sitrus Berry
+Ability: Intimidate
+Level: 50
+Tera Type: Grass
+EVs: 32 HP / 32 Atk / 2 SpD
+Adamant Nature
+- Fake Out
+- Flare Blitz
+- Darkest Lariat
+- Parting Shot
+
+Farigiraf @ Leftovers
+Ability: Armor Tail
+Level: 50
+Tera Type: Water
+EVs: 32 HP / 32 SpA / 2 SpD
+Modest Nature
+- Psychic
+- Foul Play
+- Trick Room
+- Helping Hand
+
+Gyarados @ Focus Sash
+Ability: Intimidate
+Level: 50
+Tera Type: Flying
+EVs: 32 Atk / 32 Spe / 2 HP
+Jolly Nature
+- Waterfall
+- Earthquake
+- Ice Fang
+- Protect
+
+Garchomp @ Lum Berry
+Ability: Rough Skin
+Level: 50
+Tera Type: Steel
+EVs: 32 HP / 32 Atk / 2 Spe
+Adamant Nature
+- Earthquake
+- Dragon Claw
+- Protect
+- Rock Slide
+
+Tyranitar @ Oran Berry
+Ability: Sand Stream
+Level: 50
+Tera Type: Normal
+EVs: 32 HP / 32 Atk / 2 SpD
+Adamant Nature
+- Rock Slide
+- Crunch
+- Stone Edge
+- Low Kick
+
+Dragonite @ Shell Bell
+Ability: Multiscale
+Level: 50
+Tera Type: Normal
+EVs: 32 HP / 32 Atk / 2 Spe
+Adamant Nature
+- Extreme Speed
+- Earthquake
+- Outrage
+- Ice Spinner
